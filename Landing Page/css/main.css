@@ -23,6 +23,8 @@ a {
     font-size: 11px;
     line-height: 15px;
     text-transform: uppercase;
+    justify-content: center;
+    display: flex;
 }
 
 .toppane {
@@ -80,6 +82,13 @@ a {
 }
 
 
+.content{
+    width: 100%;
+    background: url(img/image001.jpg) no-repeat;
+    background-size: contain;
+    height: 706px;
+    display: block; 
+}
 
 .title {
     font-family: Yeseva One;
@@ -112,9 +121,7 @@ a {
     box-sizing: border-box; 
 }
 
-.content{
-   
-}
+
 
 .footer{
  display:flex;
