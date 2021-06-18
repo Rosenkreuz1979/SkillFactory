@@ -84,7 +84,7 @@ a {
 
 .content{
     width: 100%;
-    background: url(img/image001.jpg) no-repeat;
+    background: url('/img/image001.jpg') no-repeat;
     background-size: contain;
     height: 706px;
     display: block; 
