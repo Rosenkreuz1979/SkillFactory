@@ -808,17 +808,45 @@ h5 {
  display:flex;
 }
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:376px){
+/*dealing with header*/
 nav {
     display:none;
 }
-.button {
+
+.headercontainer>button {
  display:none;
 }
+
 
 .phone {
     text-decoration:none;
     color:white;
 }
 
+/*main sections*/
+.container {
+    max-width:335px;
+}
+
+.inline-buttons{
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.button {
+    margin-bottom: 10px;
+}
+
+.section2-wrapper {
+    display:flex;
+}
+.tabs {
+    display:none;
+}
+
+.section3, .section4, .section5, .section6, .section7, .section8 {
+    display:none;
+}
 }
