@@ -24,6 +24,7 @@ body {
 
 .underline {
     border-bottom:1px solid #E3B873;
+    width: fit-content;
 }
 
 a {
@@ -117,6 +118,10 @@ img {
 .nav>li {
     margin-left:50px;    
 }
+.x-large-text {
+    font-size:20px;
+    line-height:1.9;
+}
 
 .large-text {
     font-size:18px;
@@ -178,7 +183,6 @@ section {
 }
 
 .section1{
-    width: 100%;
     background: url(../img/image001.jpg) no-repeat;
     background-size: cover;
     background-position: center;
@@ -282,7 +286,78 @@ section {
     row-gap: 20px;  
 }
 
+.section6 {
+    background: url(../img/gallerybg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-height: 864px;
+    position:relative;
+    z-index:-2;
+    margin-bottom:110px;
+}
+
+.linear-cover {
+    background: linear-gradient(to bottom right,rgba(0,0,0,.75),rgba(0,0,0,.9));
+    min-height: 100%;
+    position: absolute;
+    min-width: 100%;
+    z-index:-1;
+}
+
+.section6-wrapper {
+    display: grid;
+    grid-template-columns: 40% repeat(2,354px);
+    align-content: baseline;
+    column-gap: 40px;
+}
+
+.section7 {
+    align-items: center;
+    flex-direction:column;
+    padding-bottom:354px;
+    background:url('../img/clientsbg.jpg') no-repeat;
+    background-position: bottom;
+}
+
+.section7-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 54px;
+}
+
 /* end of sections and wrappers*/
+
+.wide-list {
+    list-style: none;
+    padding:0;
+    display:grid;
+    grid-template-rows:auto;
+    row-gap:20px;
+}
+
+.section6-text{
+    align-self:center;
+}
+
+.gallery {
+    display:grid;
+    grid-template-rows: auto;
+    row-gap: 40px;
+    align-content: center;
+}
+
+.gallery-img{
+    width:354px;
+    object-fit: cover;
+}
+
+.g-up {
+    margin-top:-192px;
+}
+
+.g-lower{
+    margin-top:-41px;
+}
 
 .section5-list{
     display:grid;
@@ -350,6 +425,47 @@ section {
     background: url(../img/image006.jpg) no-repeat;
     background-size: contain;
     background-position-y: top;
+}
+
+.profile {
+    max-width: 376px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 10px 50px rgb(0 0 0 / 4%);
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    column-gap:25px;
+}
+
+.profile>img{
+    width:76px;
+    height:76px;
+    border-radius:40px;
+    align-self:center;
+    column-gap:25px;
+}
+
+.profile-text{
+    grid-area:2/1/3/3;
+}
+
+.profile-label{
+    margin-top:-25px;
+    background:#E3B873;
+    display:grid;
+    width:75%;
+    grid-template-columns: 50% 1px 50%;
+    box-shadow: 5px 5px 20px rgba(227, 184, 115, 0.5);
+    justify-items: center;
+}
+
+.divider{
+    background:white;
+    min-width:100%;
+}
+
+.profile-label img{
+    margin-right:5px;
 }
 
 .listing {
@@ -597,6 +713,7 @@ h5 {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .subtitle {
