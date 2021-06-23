@@ -203,7 +203,14 @@ header a:hover {
     grid-template-columns: repeat(2, 40%);
     column-gap: 20px;
 }
+/* PROJECTS */
+.projects {
+    background:#131313;
+}
 
+.projects-wrapper {
+    min-height:1074px;
+}
 @media screen and (max-width:576px) {
 /* HOME */
 .home {
