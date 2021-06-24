@@ -14,7 +14,7 @@
         <div class="logo"><a href="#">IC "Repair Design Project"</a></div>
         <nav>
             <ul class="nav">
-                <li><a class="active" href="#">Home</a></li>
+                <li><a class="header-active" href="#">Home</a></li>
                 <li><a href="#">Project</a></li>
                 <li><a href="#">Measurement</a></li>
                 <li><a href="#">Team</a></li>
@@ -29,6 +29,7 @@
 </header>
 <main>
 <section class="home">
+    <div class="home-bg"></div>
     <div class="blackout"></div>
     <div class="container">
         <div class="wrapper home-wrapper">
@@ -36,8 +37,8 @@
             <h1 class="title caps yellow"><span class="white">Turnkey Repair in the city of</span> Rostov-on-Don</h1>
             <p class="large-text white">Get ready-made turnkey repairs on time with work time saving up to 45 days and 20% from cost of materials due to the organization of work</p>
             <div class="home-inline-items">
-                <button class="button white x-small-text italic">CALCULATE THE COST</button>
-                <button class="button white x-small-text italic">SUBMIT YOUR APPLICATION</button>
+                <button class="button white caps italic x-small-text">Calculate the Cost</button> 
+                <button class="button white caps italic x-small-text">Submit Your Application</button> 
             </div>
             </div>
         </div>
@@ -47,13 +48,24 @@
     <div class="container">
         <div class="wrapper projects-wrapper">
             <span></span>
-            <div class="project-tabs title caps"><a href="#">Rostov-on-Don Admiral</a><a href="#">Sochi Themes</a><a href="#">Rostov-on-Don Patriotic</a></div>
-            <div>
-                <h2 class="yellow title caps">Completed Projects</h2>
+            <div class="project-tabs title caps">
+                <h5><a class="active" href="#">Rostov-on-Don Admiral</a></h5>
+                <h5><a class="gray" href="#">Sochi Themes</a></h5>
+                <h5><a class="gray"href="#">Rostov-on-Don Patriotic</a></h5>
+            </div>
+            <div class="project-intro">
+                <h2 class="yellow title caps">Completed<br/>Projects</h2>
                 <p class="normal-text white">Only a small part of the work performed by our company is presented on the site. For 14 years on in the construction market we have made happy more than 1000 families</p>
             </div>
             <div class="project-gallery">
-
+                <div class="hidden-gallery">
+                    <div class="arrow left-arrow"></div>
+                    <img src="img/image003.jpg">
+                    <div class="arrow right-arrow"></div>
+                </div>
+                <div class="front-gallery">
+                    <img src="img/image002.jpg">
+                </div>
             </div>
             <div class="project-specs">
                 <h4 class="title yellow caps">City:</h4>
@@ -64,9 +76,12 @@
                 <h4 class="title yellow caps">Repait Cost:</h4>
                 <p class="smaller-text white">3.5 months</p>
                 <p class="smaller-text white">Upon request</p>
-                <div class="project-nav"></div>
-            </div>
-
+                <div class="specs-nav">
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </div>                
+            </div>            
         </div>
     </div>
 </section>
