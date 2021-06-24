@@ -510,6 +510,7 @@ a:hover {
     row-gap:10px;
     align-items: end;
     margin-bottom:140px;
+    max-height: 85px;
 }
 
 .control-check {
@@ -521,7 +522,86 @@ a:hover {
     justify-self: center;
 }
 
+/*REPAIRS*/
+
+.repairs-example {
+    width: 392px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom:59px;
+}
+
+.repairs-block {
+    width: 330px;
+    margin-top: -127px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.repairs-description { 
+    background: white;
+    box-shadow: 10px 10px 20px rgb(0 0 0 / 3%);
+    padding: 25px 34px 49px;
+    width: 262px;  
+}
+
+.repairs-list {
+    padding-left: 17px;
+    line-height: 26.6px;
+    margin-top: 13px;
+}
+
+.repairs-label {
+    background:#E3B873;
+    box-shadow: 5px 5px 10px rgba(227, 184, 115, 0.3);
+    padding:17px 20px;
+    min-width:228px;
+    margin-top:-30px;
+}
+
+.total-repairs {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
 @media screen and (max-width:576px) {
+/*REPAIRS*/
+.repairs {
+    margin-top:83px;
+}
+
+.repairs-example {
+    width:340px;
+    align-items: flex-start;
+}
+
+.repairs-block {
+    width:270px;
+}
+
+.repairs-description {
+    padding: 21px 31px 37px;
+    width:208px;
+}
+
+.repairs-list {
+    line-height: 22.07px;
+}
+.repairs-img img {
+ max-width:340px;   
+}
+
+.total-repairs {
+    flex-direction:column;
+    
+}
+
+.repairs-label {
+    min-width:190px;
+}
 /* CONTROL */
 
 .control {
@@ -547,6 +627,7 @@ a:hover {
     grid-template-rows: auto;
     max-width:90%;
     row-gap: 40px;
+
 }
 
 .control-name {
