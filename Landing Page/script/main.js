@@ -82,18 +82,7 @@ function evenOdd() { //5.6.7
 
 }
 
-function mappWork(){
-let carList = new Map();
-carList.set('red', 'T50');
-carList.set( 'green', 21);
-carList.set('yellow', 'Rs5');
-carList.set( 'white', true);
-carList.forEach(function(key,value){
-    console.log(key + " - X" + "\n" + value + " - Y");
-})
-}
-
-function mapWork () {
+function mapWork () { //5.7.8
     let myMap=new Map([["Color Blue",true],["Color Green",true],["Color Yellow",true],["Color Purple",false], ["Name of Item","Artifact"], ["Time of Creation", 1624717614]]);
 
     myMap.forEach(function(item,index){
