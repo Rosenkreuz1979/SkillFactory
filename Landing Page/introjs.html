@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,10 +10,39 @@
 <body>
     <section class="taskslist">
         <div class="task">
-            <button class="ybutton larger-text caps white" onClick="">5.3.1</button>
-            <p class="normal-text">Напишите программу, которая работала бы следующим образом: в <code>prompt</code> вводится значение. С помощью унарного плюса (арифметический оператор) необходимо преобразовать его в число, затем проверить с помощью typeof, принадлежит ли оно к множеству Number.</p>
+            <button class="ybutton larger-text caps white" onClick="numberCheck();" title="Нажмите для выполнения задания">5.3.1</button>
+            <p class="normal-text">Напишите программу, которая работала бы следующим образом: в <code>prompt</code> вводится значение. С помощью унарного плюса (арифметический оператор) необходимо преобразовать его в число, затем проверить с помощью <code>typeof</code>, принадлежит ли оно к множеству <code>Number</code>.</p>
         </div>
-        
+        <div class="task">
+            <button class="ybutton larger-text caps white" onClick="typeCheck();" title="Нажмите для выполнения задания">5.3.2</button>
+            <p class="normal-text">Дана переменная Х, которая может принимать любое значение. Написать программу, которая в зависимости от типа данных Х выводит в консоль сообщение вида: «X — число».</p>
+        </div>
+        <div class="task">
+            <button class="ybutton larger-text caps white" onClick="reverseString();" title="Нажмите для выполнения задания">5.4.3</button>
+            <p class="normal-text">Дана строка. Необходимо вывести в консоль перевёрнутый вариант. Например, <code>"Hello" -> "olleH"</code>.</p>
+        </div>
+        <div class="task">
+            <button class="ybutton larger-text caps white" onClick="randomNumber();" title="Нажмите для выполнения задания">5.4.4</button>
+            <p class="normal-text">Записать в переменную случайное целое число в диапазоне [0; 100]. Используйте объект <code>Math</code>.</p>
+        </div>
+        <div class="task">
+            <button class="ybutton larger-text caps white" onClick="arrayWork();" title="Нажмите для выполнения задания">5.5.5</button>
+            <p class="normal-text">Дан произвольный массив. Необходимо вывести количество элементов массива, затем перебрать его и вывести в консоль каждый элемент массива.</p>
+        </div>
+        <div class="task">
+            <button class="ybutton larger-text caps white" onClick="checkEquality();" title="Нажмите для выполнения задания">5.6.6</button>
+            <p class="normal-text">Дан массив. Проверить, одинаковые ли элементы в массиве и вывести результат true или false в консоль. Речь идёт не о двух рядом стоящих одинаковых элементах, а обо всех. Проверить, все ли элементы в массиве одинаковые.</p>
+        </div>
+        <div class="task">
+            <button class="ybutton larger-text caps white" onClick="evenOdd();" title="Нажмите для выполнения задания">5.6.7</button>
+            <p class="normal-text">Дан массив. Нужно вывести в консоль количество чётных и нечётных элементов в массиве. Если в массиве есть нулевой элемент, то он учитывается и выводится отдельно. <br/>
+            При выполнении задания необходимо учесть, что массив может содержать не только числа, но и, например, знаки, <code>null</code> и так далее.</p>
+        </div>
+        <div class="task">
+            <button class="ybutton larger-text caps white" onClick="mapWork();" title="Нажмите для выполнения задания">5.7.8</button>
+            <p class="normal-text">Создайте произвольный массив <code>Map</code>. Получите его ключи и выведите в консоль все значения в виде «Ключ — Х, значение — Y».
+                Используйте шаблонные строки.</p>
+        </div>
 
     </section>
 </body>

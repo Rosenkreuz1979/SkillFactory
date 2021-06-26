@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Nunito Sans;
+    font-family: Nunito Sans, Arial;
     font-style: normal;
     font-weight: normal;
 }
@@ -263,6 +263,7 @@ a:hover {
     padding: 20px 40px;
     min-width:200px;
     border:1px solid transparent;
+    cursor:pointer;
 }
 
 .button:hover {
@@ -765,12 +766,12 @@ a:hover {
     padding: 10px 0;
 }
 
-.divider{
+.divider {
     background:white;
     min-width:100%;
 }
 
-.profile-label img{
+.profile-label img {
     margin-right:5px;
 }
 
@@ -782,9 +783,7 @@ a:hover {
 }
 
 /*QUESTION-FORM*/
-.questions {
 
-}
 .questions-wrapper {
     flex-direction: column;
     align-items: center;
@@ -1203,9 +1202,22 @@ a:hover {
 
 /*Tasks Styles*/
 .taskslist {
-
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: 10px;
 }
 
 .task {
-    
+    display: grid;
+    grid-template-columns: .2fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+code {
+    padding: 0 5px;
+    background: lightgray;
+    border: 1px solid gray;
+    border-radius: 3px;
 }
