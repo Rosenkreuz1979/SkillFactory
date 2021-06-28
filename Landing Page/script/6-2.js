@@ -26,4 +26,4 @@ function primalityTest(number) { // 6.2
      }
   }
   
-  primalityTest(0);
+  primalityTest(887);
