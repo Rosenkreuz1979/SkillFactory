@@ -105,8 +105,6 @@ hob.switchOn();
 xBox_X.switchOff();
 hob.switchOven();
 
-console.log(GamingAppliance);
+console.log(hob);
 
-console.log(playStation4.description);
-
-
+console.log(playStation4);
