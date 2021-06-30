@@ -575,6 +575,7 @@ a:hover {
     margin-top:200px;
     background:url('../img/bg001.jpg') left bottom no-repeat;
     margin-bottom:130px;
+    background-position-x: -303px;
 }
 
 .request-wrapper {
