@@ -1,0 +1,28 @@
+* {
+    margin: 0 auto;
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+  
+  .main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  .form {
+    margin: 20px;
+    background:lightgray;
+    border:2px solid gray;
+    border-radius:4px;
+    padding:15px;
+  
+
+  }
+
+  .submit {
+      padding:5px 15px;
+  }
+
