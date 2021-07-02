@@ -5,74 +5,49 @@
 window.onload = () => {
  let content = document.querySelector('.content-wrapper');
  let button = document.querySelector('.submit');
- let field = document.querySelector('.input-field');
+ let field1;
+ let field2;
  let warning;
  let queryURL;
  
- function xhrRequest(url,callback){
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
-   
-    xhr.onload = function() {
-      if (xhr.status != 200) { 
-        console.log(`Статус ответа: ${xhr.status}`);
-      } else {    
-        let jsonResult = JSON.parse(xhr.response);
-        console.log('Ответ Получен');
-        if (callback) {
-            callback(jsonResult);
-        }        
-      }
-    };
- 
-    xhr.onerror = function() {
-      console.log(`Ошибка! ${xhr.status}`);
-    };
-    
-    xhr.send();
+ function fetchRequest(url,callback){
+    fetch(url)
+    .then((response) => { displayPicture(response.url); })
+    .catch(() => { console.log('error') });
  }
 
+function checkField(formfield) {
+    let field = document.querySelector('#'+formfield);
+    field.classList.remove("error");
+    if (+field.value < 100 || +field.value > 300 || isNaN(+field.value)) {
+        warning=`<div class="warning toggle">одно из введенных чисел вне диапазона от 100 до 300.</div>`;
+        content.innerHTML=warning;
+        field.classList.add("error");
+        return false;   
+     } else {
+        return field.value;        
+     }
 
+}
 
 button.addEventListener('click',()=> {
-     if (+field.value < 1 || +field.value > 10) {
-        warning=`<div class="warning toggle">Введенное число не попадает в желаемый промежуток. Проверьте правильность ввода</div>`;
-        content.innerHTML=warning;      
-     } else if (isNaN(+field.value)) {
-         warning=`<div class="warning toggle">Вы ввели неверное значение. Введите <strong>число</strong> в диапазоне от 1 до 10</div>`;
-         content.innerHTML=warning;        
-     } else {
-         queryURL = `https://picsum.photos/v2/list?limit=${field.value}`;
-         xhrRequest(queryURL,displayPictures);
-        
-     }
+    if ((field1=checkField("field1")) && (field2=checkField("field2"))) {
+        queryURL=`https://picsum.photos/${field1}/${field2}`;
+        fetchRequest(queryURL);
+    }
  })
 
- function displayPictures(jsonData) {
-    let tiles = '';
-    
-    jsonData.forEach(item => {
-      const tileBlock = `
-        <div class="tile">
+ function displayPicture(picture) {
+     const tileBlock = `
+        <div>
           <img
-            src="${item.download_url}"
-            class="tile-image"
-          />
-          <p>${item.author}</p>
+            src="${picture}"
+            width="${field1}" height="${field2}"
+          />          
         </div>
       `;
-      tiles += tileBlock;
-    });
     
-    content.innerHTML = tiles;
+    content.innerHTML = tileBlock;
   }
- 
-
- 
-
-
-
-
-
 
 }
