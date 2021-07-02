@@ -8,7 +8,6 @@ window.onload = () => {
     let content = document.querySelector('.content-wrapper');
     let storage = window.localStorage.getItem('gallery');
 if (storage) {
-    console.log(storage);
     displayPictures(JSON.parse(storage));
 } 
 
@@ -29,9 +28,7 @@ if (storage) {
         console.log(`Статус ответа: ${xhr.status}`);
       } else {    
         let jsonResult = JSON.parse(xhr.response);
-        console.log(xhr.response);
         console.log('Ответ Получен');
-        console.log(jsonResult);
         if (callback) {
             window.localStorage.setItem('gallery',xhr.response);
             callback(jsonResult);
