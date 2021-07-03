@@ -28,60 +28,55 @@ let chatGeo = document.querySelector('.chat-geo');
 let chatInput = document.querySelector('.chat-input');
 let chatMessages = document.querySelector('.chat-messages');
 
-let webSocket;
-
 function wrapMessage(msg,from) {
     if (msg) {
         let message = document.createElement('div');
-        message.className = `message-${from}`;
+        message.className = `message message-${from}`;
         message.innerHTML = msg;  
-        // message.innerHTML = `<div class="message-${from}">${msg}</div>`;
         if (chatMessages.querySelector(".empty-placeholder")){            
            chatMessages.innerHTML="";            
         }
-        chatMessages.insertBefore(message,chatMessages.firstChild);
-        
+        //chatMessages.insertBefore(message,chatMessages.firstChild);
+        chatMessages.appendChild(message);
+
     }
  
 }
 
-wrapMessage("Hello there","server");
-wrapMessage("Hi","client");
-//wrapMessage("What are you up to?","server");
-//wrapMessage("Nothing much","client");
 
 
-/*btnOpen.addEventListener('click', () => {
-  websocket = new WebSocket(wsUri);
-  websocket.onopen = function(evt) {
-    writeToScreen("CONNECTED");
-  };
-  websocket.onclose = function(evt) {
-    writeToScreen("DISCONNECTED");
-  };
-  websocket.onmessage = function(evt) {
-    writeToScreen(
-      '<span style="color: blue;">RESPONSE: ' + evt.data+'</span>'
-    );
-  };
-  websocket.onerror = function(evt) {
-    writeToScreen(
-      '<span style="color: red;">ERROR:</span> ' + evt.data
-    );
-  };
+let webSocket = new WebSocket(webURL);
+
+webSocket.onopen = () => { wrapMessage("Server Connection Established","system") };
+
+webSocket.onclose = () => { wrapMessage("Server Connection Closed","system") };
+
+webSocket.onmessage = (event) => { 
+    if (!(event.data.includes("My GeoLocation"))){ wrapMessage(event.data,"server")}};
+
+webSocket.onerror = (event) => { wrapMessage(event.data,"error") };
+
+chatSend.addEventListener('click', () => {
+  let message = chatInput.value;
+  if (message) {
+    wrapMessage(message,"client");
+    webSocket.send(message);
+  }  else {
+    wrapMessage("You cannot send an empty message to the server","error");
+  }
 });
 
-btnClose.addEventListener('click', () => {
-  websocket.close();
-  websocket = null;
-});
-
-btnSend.addEventListener('click', () => {
-  const message = 'Test message';
-  writeToScreen("SENT: " + message);
-  websocket.send(message);
-});
-
-*/
+chatGeo.addEventListener('click', () => {
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const { coords } = position;
+            let message = `<a href="https://www.openstreetmap.org/#map=17/${coords.latitude}/${coords.longitude}" target="_blank">My GeoLocation</a>`;
+            wrapMessage(message,"geo");
+            webSocket.send(message);
+        });       
+      } else {
+        wrapMessage("Sorry, your browser does not support Geolocation requests","error");
+      }
+})
 
 }
