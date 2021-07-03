@@ -19,5 +19,13 @@
 }
 
 .hidden-icon{
-    
+ 
+}
+
+.visible {
+    display:block;
+}
+
+.hidden {
+    display:none;
 }
