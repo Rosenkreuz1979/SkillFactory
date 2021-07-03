@@ -10,16 +10,13 @@
     display: flex;
     padding: 5px 15px;
     align-items: center;
+    min-width:200px;
 }
 
 .icon{
     width: 15px;
     height: 15px;
     margin-left: 10px;
-}
-
-.button-icon{
-
 }
 
 .hidden {

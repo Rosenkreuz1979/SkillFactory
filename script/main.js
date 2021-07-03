@@ -1,7 +1,8 @@
 window.onload = () => {
-let button = document.querySelector(".button");
-let icon1 = button.querySelector(".button-icon");
-let icon2 = button.querySelector(".hidden-icon");
+let button1 = document.querySelector(".button-arrow");
+let button2 = document.querySelector(".button-size");
+let icon1 = button1.querySelector(".button-icon");
+let icon2 = button1.querySelector(".hidden-icon");
 
 function switchVisibility(){
     icon1.classList.toggle("hidden");
@@ -9,8 +10,14 @@ function switchVisibility(){
 }
 
 
-button.addEventListener("click", function(){
+button1.addEventListener("click", function(){
     switchVisibility();    
 })
+
+button2.addEventListener("click", () => {
+    alert(`Размеры экрана: Ширина:${window.screen.width} Высота:${window.screen.height}`); //экран
+   // alert(`Размеры окна: Ширина:${window.innerWidth} Высота:${window.innerHeight}`); //окно
+})
+
 
 }
