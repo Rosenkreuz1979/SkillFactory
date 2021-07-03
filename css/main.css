@@ -2,6 +2,10 @@
     margin:0 auto;
 }
 
+.form {
+    padding: 20px;
+}
+
 .button {
     display: flex;
     padding: 5px 15px;
@@ -16,14 +20,6 @@
 
 .button-icon{
 
-}
-
-.hidden-icon{
- 
-}
-
-.visible {
-    display:block;
 }
 
 .hidden {
