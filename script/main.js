@@ -10,11 +10,11 @@ function switchVisibility(){
 }
 
 
-button1.addEventListener("click", function(){
+button1.addEventListener("click", function(){ //10-1
     switchVisibility();    
 })
 
-button2.addEventListener("click", () => {
+button2.addEventListener("click", () => { //10-2
     alert(`Размеры экрана: Ширина:${window.screen.width} Высота:${window.screen.height}`); //экран
    // alert(`Размеры окна: Ширина:${window.innerWidth} Высота:${window.innerHeight}`); //окно
 })
