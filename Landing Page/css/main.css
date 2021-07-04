@@ -105,6 +105,7 @@ a {
  text-decoration:none;
  color:white;
  border-bottom:1px solid transparent;
+ cursor:pointer;
 }
 
 hr {
@@ -113,7 +114,7 @@ hr {
     border-radius:2px;
 }
 
-.active { 
+.activelink { 
     color:#E3B873;
     border-bottom:1px solid #E3B873; 
     width:fit-content;
@@ -347,6 +348,13 @@ a:hover {
     display:grid;
     grid-template-columns: repeat(2,49%);
     grid-gap:30px;
+    opacity:0;
+    transition: opacity 800ms ease; 
+    position:absolute; 
+}
+
+.project-specs.active{
+    opacity:1;
 }
 
 .project-gallery {
@@ -369,11 +377,27 @@ a:hover {
 }
 
 .front-gallery {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     z-index:1;
+    width:680px;
+    height:480px;
+    position:absolute;
 }
+
+.front-gallery .image {
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 800ms ease;  
+  }
+
+.front-gallery .image.active {
+    opacity: 1;  
+ }
 
 .arrow {
     width:12px;
@@ -407,10 +431,72 @@ a:hover {
     font-size: 2em;
     padding: 0 10px;
     flex-wrap: wrap;
-    grid-area: 5/1/6/1;
+    display: flex;
+    flex-direction: row;
+    font-size: 2em;
+    padding: 0 10px;
+    flex-wrap: wrap;
+    grid-area: 8/1/9/1;
 }
 
-.specs-nav>a {
+.slider_arrows {
+    position: relative;
+    width: 100%;
+    color: #fff;
+  }
+
+.slider_arrow {
+    position: absolute;
+    /*width: 10%;
+    height: 100%;
+    font-size: 20px;*/
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.4s ease;
+    color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slider_arrow:hover {
+    color:white;
+  }
+  
+  .slider_arrow.left {
+    left: 0;
+  }
+  
+  .slider_arrow.right {
+    right: 0;
+  }
+  
+  .slider_dots {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+    
+  }
+  
+  .slider_dots-item {
+    width: 10px;
+    height: 10px;
+    background: gray;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.4s ease;
+  }
+  
+  .slider_dots-item:hover, .slider_dots-item.active {
+    background: lightgray;
+  }
+
+
+/*.specs-nav>a {
     border-radius: 10px;
     border: 5px solid rgba(255,255,255,.3);
     display: inline;
@@ -437,7 +523,7 @@ a:hover {
     margin-left:20px;
     cursor:pointer;
     color:white;
-}
+}*/
 
 /* Control */
 .control-wrapper {
@@ -1081,6 +1167,7 @@ a:hover {
 .project-specs {
     grid-area: 3/1/4/1;
     grid-gap:15px;
+    position:unset;
 }
 
 .specs-nav {
