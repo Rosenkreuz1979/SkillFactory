@@ -1,6 +1,6 @@
 export function getMonth(n) {
 	if (n === 1) return 'January';
-	if (n === 2) return 'February';
+	if (n === 2) return `February`;
 	if (n === 3) return 'March';
 	if (n === 4) return 'April';
 	if (n === 5) return 'May';
@@ -11,6 +11,6 @@ export function getMonth(n) {
 	if (n === 10) return 'October';
 	if (n === 11) return 'November';
 	if (n === 12) return 'December';
-    if (isNaN(+n)) return 'You wrote a string';
-  return 'undefined';
+    if (isNaN(+n)) return `You wrote a string ${n}`;
+  return `There are less than ${n} Months in a Year`;
 }
