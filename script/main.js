@@ -61,6 +61,7 @@ chatSend.addEventListener('click', () => {
   if (message) {
     wrapMessage(message,"client");
     webSocket.send(message);
+    chatInput.value='';
   }  else {
     wrapMessage("You cannot send an empty message to the server","error");
   }
