@@ -1,4 +1,4 @@
-import { getMonth }  from './testcases/getmonth.js';
+import { getMonth }  from '../getmonth.js';
 
 describe ('Checking Function of returning Month', () => {    
   
