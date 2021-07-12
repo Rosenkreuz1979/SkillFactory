@@ -19,6 +19,13 @@ let images = [{
     area: "93 m2",
     time: "3 months",
     cost: "Upon Request"
+  },{
+    url: "img/slider002.jpg",
+    title: "Sochi Thieves",
+    city: "Sochi Thieves",
+    area: "105 m2",
+    time: "4 months",
+    cost: "Upon Request"
   }];
 
 function initSlider() {
@@ -86,7 +93,7 @@ function initSlider() {
 
     function initDots(){
         images.forEach((image,index) => {
-            let dot = `<div class="slider_dots-item n${index} ${index === 0? "active" : ""}" data-index="${index}" data-index="${index}"></div>`;
+            let dot = `<div class="slider_dots-item n${index} ${index === 0? "active" : ""}" data-index="${index}"></div>`;
             sliderDots.innerHTML += dot;
         });
         sliderDots.querySelectorAll(".slider_dots-item").forEach(dot => {
@@ -97,17 +104,15 @@ function initSlider() {
     }
 
     function toggleClass(item,num,clss){
-        item.querySelector("."+clss).classList.remove(clss);
-        item.querySelector(".n"+num).classList.add(clss);
+        item.querySelector("."+clss).classList.toggle(clss);
+        item.querySelector(".n"+num).classList.toggle(clss);
     };
 
     function moveSlider(num) {
         toggleClass(sliderImages,num,"active");
         toggleClass(sliderDots,num,"active");
         toggleClass(tabsImages,num,"activelink");
-        toggleClass(projectSpecs,num,"active");
-
-         
+        toggleClass(projectSpecs,num,"active");         
     }
 
 
