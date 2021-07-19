@@ -16,9 +16,5 @@
   "bugs": {
     "url": "https://github.com/Rosenkreuz1979/SkillFactory/issues"
   },
-  "homepage": "https://github.com/Rosenkreuz1979/SkillFactory#readme",
-  "devDependencies": {
-    "webpack": "^5.45.1",
-    "webpack-cli": "^4.7.2"
-  }
+  "homepage": "https://github.com/Rosenkreuz1979/SkillFactory#readme"
 }
