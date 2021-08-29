@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass scss/ -o css/"
+    "scss": "node-sass scss/ -o css/",
+    "minifyImages": "imagemin react-youtube/картинки/* --out-dir=public/img"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/Rosenkreuz1979/SkillFactory/issues"
   },
-  "homepage": "https://github.com/Rosenkreuz1979/SkillFactory#readme"
+  "homepage": "https://github.com/Rosenkreuz1979/SkillFactory#readme",
+  "dependencies": {
+    "latest-version": "^6.0.0",
+    "node": "^16.6.1"
+  }
 }
