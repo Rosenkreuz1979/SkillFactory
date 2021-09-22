@@ -1,0 +1,32 @@
+:root {
+    --pri:#0067A3;
+    --sec: #0079BF;
+    --ter:#5E6C84;
+    --brd: #EBECF0;
+    --tsk: #fff;
+    --txt: #000;    
+}
+
+body {
+    margin:0;
+    background: var(--sec);
+    display: flex;
+}
+
+.container {
+    margin-left:10px;
+    width: 23vw;
+    max-height: 100vh;
+    border-radius:10px;
+    background: var(--brd);
+    /*margin:0 auto;*/
+    display:inline-block;
+}
+
+@media screen and (max-width: 768px) { 
+    .container {
+        min-width:90vw;
+        align-self:center;
+    }
+    
+}
