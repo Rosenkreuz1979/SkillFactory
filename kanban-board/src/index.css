@@ -9,6 +9,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200;300;400;700&display=swap');
 
+@font-face {
+    font-family: "FA";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url(https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.eot);
+    src: url(https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.eot?#iefix) format("embedded-opentype"), url(https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff2) format("woff2"), url(https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff) format("woff"), url(https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.ttf) format("truetype"), url(https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.svg#fontawesome) format("svg")
+}
 
 body {    
     margin:0;
@@ -16,15 +24,20 @@ body {
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
-.container {
-    margin-left:10px;
-    width: 23vw;
-    max-height: 100vh;
-    border-radius:10px;
-    background: var(--brd);
-    /*margin:0 auto;*/
-    display:inline-block;
+
+.navbar,
+.footer {
+    width: calc(100vw - 20px);
+    height: 55px;
+    display: flex;
+    overflow: hidden;
+    color: var(--tsk);
+    background: var(--pri);
+    align-items: center;
+    padding: 0 10px;
+    justify-content: space-between;
 }
+
 
 @media screen and (max-width: 768px) { 
     .container {

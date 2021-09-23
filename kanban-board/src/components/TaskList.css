@@ -1,0 +1,31 @@
+
+.container {
+    width: 23vw;
+    max-height: 100vh;
+    border-radius: 5px;
+    background: var(--brd);
+    margin: 0 auto;
+    display: inline-block;
+    padding: 5px;
+}
+.task-header {
+    text-align: center;
+    text-transform: uppercase;
+    background: var(--ter);
+    color: var(--tsk);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.task-list {
+
+}
+
+.backlog::before {
+  font-family: 'FA';
+  content:'\f03a';
+  
+}
+
+
+/*https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff2*/
