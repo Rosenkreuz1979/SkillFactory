@@ -23,7 +23,7 @@ const [warning,setWarning] = useState('')
                  if (name!=='' && text!=='') { 
                  dispatch({
                      type: 'add',
-                     payload: {'target':'backlog','name':`${name}`, 'text':`${text}`}
+                     payload: {'target':'backlog','name':`${name}`, 'description':`${text}`}
                     });
                      setState( !state )
                      //setName('');

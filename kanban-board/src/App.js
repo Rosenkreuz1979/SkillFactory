@@ -50,7 +50,7 @@ export default function App() {
  }` */
   
   const [state,dispatch] = useReducer(reducer, JSON.parse(window.localStorage.getItem('todos')))
-
+  //const [state,dispatch] = useReducer(reducer, '')
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(state))
