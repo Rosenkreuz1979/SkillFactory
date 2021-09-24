@@ -1,4 +1,3 @@
-
 .container {
     width: 23vw;
     max-height: 100vh;
@@ -8,6 +7,7 @@
     display: inline-block;
     padding: 5px;
 }
+
 .task-header {
     text-align: center;
     text-transform: uppercase;
@@ -17,15 +17,39 @@
     border-radius: 4px;
 }
 
-.task-list {
+.task-list {    
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 4px;
+    max-height: calc(90vh - 110px);
+    overflow-y: auto;
+}
 
+.backlog::before,
+.ready::before,
+.inprogress::before,
+.finished::before{
+    font-family: 'Font Awesome 5 Free';
+    margin-right: 5px;
+    font-weight: 900;
 }
 
 .backlog::before {
-  font-family: 'FA';
-  content:'\f03a';
-  
+    content: "\f481";    
 }
 
+.ready::before {
+    content: "\f46d";
+}
 
-/*https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff2*/
+.inprogress::before {
+    content: "\f085";
+}
+
+.finished::before {
+    content: "\f46c";
+}
+
+.notasks{
+    color:var(--dis);
+}

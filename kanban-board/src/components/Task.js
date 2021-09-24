@@ -1,9 +1,12 @@
 import React from 'react'
+import './Task.css'
+
 
 export default function Task({data}) {
-    return(
-        console.log(data),
-        <div>{data.id} - {data.name}</div>
+    
+     return(
+        
+        <div className='task'>{data.id} - {data.name}</div>
     )
     
 }
