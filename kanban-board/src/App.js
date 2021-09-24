@@ -1,5 +1,4 @@
 import React, {useState, useEffect, useReducer} from 'react'
-import { ContextProvider } from 'react-is'
 import './App.css'
 import TaskList from './components/TaskList'
 import { Context } from './context'

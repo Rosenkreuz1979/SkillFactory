@@ -1,6 +1,6 @@
 .container {
     width: 23vw;
-    max-height: 100vh;
+    max-height: calc(95vh - 110px);
     border-radius: 5px;
     background: var(--brd);
     margin: 0 auto;
@@ -21,7 +21,7 @@
     margin-top: 5px;
     padding: 5px;
     border-radius: 4px;
-    max-height: calc(90vh - 110px);
+    max-height: calc(90vh - 210px);
     overflow-y: auto;
 }
 
