@@ -50,6 +50,11 @@ body {
     content: '\f067';
 }
 
+.remove {
+    color:darkred;
+    float:right;
+}
+
 @media screen and (max-width: 768px) {
     .container {
         min-width: 90vw;

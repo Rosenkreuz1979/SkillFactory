@@ -8,7 +8,7 @@ function TaskList({name,data}){
       <div className="container">
           <div className={`task-header ${name.replace(/\s/g,'')}`}>{name}</div>
           <div className="task-list">              
-              { (data.length) ? data.map(item => <Task attr={name} key={item.id} data={item}/> ) : <div className="notasks">No tasks available</div> }
+              { (data.length) ? data.map(item => <Task attr={name} key={item.id} data={item} /> ) : <div className="notasks">No tasks available</div> }
           </div>
           {(name==='backlog') ? <InputField /> : <div className="someThnig"></div>}
       </div>
