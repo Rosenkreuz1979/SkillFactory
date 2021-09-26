@@ -40,13 +40,16 @@ disabled = arrays.length
     return (
       <div>
       {!opened ? <button className="button add-button" onClick={()=>setOpened(true)} disabled={disabled ? false : true} >Add Task</button> : 
-      <><select className="selectbox" onChange={(event) => setSelected(event.target.value)}>          
+      <><select className="selectbox" onChange={(event) => setSelected(event.target.value)}>
+          <option selected value=''/>    
       { arrays.map(issue => <option value={issue.id} key={issue.id.toString()} >{issue.id} - {issue.name}</option> )}
       </select>
-      <button className="button addtask" onClick={()=>dispatch({
+      <button className="button addtask" onClick={()=>{ 
+          console.log(selected);
+          dispatch({
                      type: 'move',
                      payload: {'source':`${source}`,'target':`${params.data}`,'id':`${selected}`}
-                    })}>Add Item</button></>}
+                    })}}>Add Item</button></>}
       </div>
     )
 }
