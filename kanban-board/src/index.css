@@ -43,6 +43,13 @@ body {
     background: var(--dis);
 }
 
+.button:disabled {
+    background:none;
+    color:var(--dis);
+    cursor:default;
+
+}
+
 .add-button::before {
     font-family: 'Font Awesome 5 Free';
     margin-right: 5px;

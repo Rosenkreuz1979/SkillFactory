@@ -1,5 +1,7 @@
 import React, {useEffect, useReducer} from 'react'
 import './App.css'
+import Footer from './components/Footer'
+import Navbar from './components/Navbar'
 import TaskList from './components/TaskList'
 import { Context } from './context'
 import reducer from './reducer'
@@ -11,8 +13,7 @@ export default function App() {
  if (window.localStorage.getItem('todos')){ 
     stringToParse = window.localStorage.getItem('todos')
  } else {
-    stringToParse = `{
-      "result":[
+    stringToParse = `[
          {
             "title":"backlog",
             "issues":[ 
@@ -36,22 +37,23 @@ export default function App() {
                
             ]
          }
-      ]
-   }`
+      ]`
  }
 
 
 const [state,dispatch] = useReducer(reducer, JSON.parse(stringToParse)) 
-   
-  useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(state))    
-  },[state])
+
+ useEffect(() => {    
+   localStorage.setItem('todos', JSON.stringify(state))    
+ },[state])
  
   return (
   <Context.Provider value={{dispatch}}>
+   <Navbar />
     <div className="App">      
-      {state.result.map(item => <TaskList key={item.title} name={item.title} data={item.issues} />)}
-    </div>    
+      {state.map(item => <TaskList key={item.title} name={item.title} data={item.issues} />)}
+    </div>
+    <Footer data={state}/>
   </Context.Provider>
   );
 };

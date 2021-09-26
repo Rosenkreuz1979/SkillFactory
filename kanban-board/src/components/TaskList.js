@@ -2,6 +2,7 @@ import React from 'react'
 import Task from './Task'
 import './TaskList.css'
 import InputField from './InputField'
+import DropDown from './DropDown'
 
 function TaskList({name,data}){
   return (
@@ -10,7 +11,7 @@ function TaskList({name,data}){
           <div className="task-list">              
               { (data.length) ? data.map(item => <Task attr={name} key={item.id} data={item} /> ) : <div className="notasks">No tasks available</div> }
           </div>
-          {(name==='backlog') ? <InputField /> : <div className="someThnig"></div>}
+          {(name==='backlog') ? <InputField /> : <DropDown data={name}/>}
       </div>
   )
 }

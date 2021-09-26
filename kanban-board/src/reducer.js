@@ -2,7 +2,7 @@ export default function reducer(state,action){
     let result
     switch (action.type){
         case 'add':            
-        result = state.result.map(todo => {               
+        result = state.map(todo => {               
             if (todo.title === action.payload.target) {
                  todo.issues.push({
                      'id': Date.now(),
@@ -12,19 +12,35 @@ export default function reducer(state,action){
             }
             return todo
         })
-        state.result=result
-        localStorage.setItem('todos', JSON.stringify(state))        
-        return state
+        return result
+
+        case 'move':
+            let todoItem
+            result = state.map(todo => {               
+                if (todo.title === action.payload.source) {
+                    todoItem = todo.issues.filter(issue => issue.id===parseInt(action.payload.id,10))
+                    todo.issues = todo.issues.filter(issue => issue.id!==parseInt(action.payload.id,10))
+                 
+                }
+                return todo
+            })
+            result = result.map(todo => {
+                if (todo.title === action.payload.target) {
+                    todo.issues.push(todoItem[0])
+                }
+                return todo
+            })
+            return result
+
         case 'remove':
-        result = state.result.map(todo => {               
+        result = state.map(todo => {               
             if (todo.title === action.payload.attr) {
                 todo.issues = todo.issues.filter(issue => issue.id!==parseInt(action.payload.id,10))                
             }
             return todo
           })
-           state.result=result
-           localStorage.setItem('todos', JSON.stringify(state)) 
-           return state
+  
+           return result
         
         default:
            return state
