@@ -1,7 +1,7 @@
 export default function reducer(state,action){
     switch (action.type){
         case 'add':            
-        state.result.map(todo => {               
+        let result = state.result.map(todo => {               
             if (todo.title === action.payload.target) {
                  todo.issues.push({
                      'id': Date.now(),
@@ -11,7 +11,8 @@ export default function reducer(state,action){
             }
             return todo
         })
-        localStorage.setItem('todos', JSON.stringify(state))
+        state.result=result
+        localStorage.setItem('todos', JSON.stringify(state))        
         return state
         
         

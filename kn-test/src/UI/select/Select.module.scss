@@ -1,0 +1,21 @@
+.select {
+  width: 258px;
+  height: 35px;
+  border-radius: 5px;
+  margin-top: 15px;
+  appearance: none;
+  padding: 7px;
+  position: relative;
+  background: url('../../Images/Main/carret.png') 228px 11px no-repeat;
+  background-color: #ffffff;
+
+  .option {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    width: 50px;
+  }
+  .op {
+
+  }
+}

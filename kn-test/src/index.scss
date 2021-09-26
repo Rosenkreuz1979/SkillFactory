@@ -1,0 +1,22 @@
+// @import './fonts/fonts.scss';
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  .container {
+    width: 1255px;
+    margin: 0 auto;
+    padding: 0px 10px;
+  }
+  li {
+    list-style-type: none;
+
+  }
+}
