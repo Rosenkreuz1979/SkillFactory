@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useReducer} from 'react'
+import React, {useEffect, useReducer} from 'react'
 import './App.css'
 import TaskList from './components/TaskList'
 import { Context } from './context'
@@ -6,48 +6,7 @@ import reducer from './reducer'
 
 
 export default function App() {
- /* const mockData = `{
-    "result":[
-       {
-          "title":"backlog",
-          "issues":[
-             {
-                "id":"task1",
-                "name":"Sprint bugfix",
-                "description":"Это был темный лес, издали казавшийся непроходимым. Там Пахапиль охотился, глушил рыбу, спал на еловых ветках. Короче – жил, пока русские не выгнали оккупантов. А когда немцы ушли, Пахапиль вернулся. Он появился в Раквере, где советский капитан наградил его медалью. Медаль была украшена четырьмя непонятными словами, фигурой и восклицательным знаком."
-             },
-             {
-                "id":"task2",
-                "name":"Something else",
-                "description":"Это был темный лес, издали казавшийся непроходимым. Там Пахапиль охотился, глушил рыбу, спал на еловых ветках. Короче – жил, пока русские не выгнали оккупантов. А когда немцы ушли, Пахапиль вернулся. Он появился в Раквере, где советский капитан наградил его медалью. Медаль была украшена четырьмя непонятными словами, фигурой и восклицательным знаком."
-             },
-             {
-                "id":"task3",
-                "name":"Also a task",
-                "description":"Это был темный лес, издали казавшийся непроходимым. Там Пахапиль охотился, глушил рыбу, спал на еловых ветках. Короче – жил, пока русские не выгнали оккупантов. А когда немцы ушли, Пахапиль вернулся. Он появился в Раквере, где советский капитан наградил его медалью. Медаль была украшена четырьмя непонятными словами, фигурой и восклицательным знаком."
-             }
-          ]
-       },
-       {
-          "title":"ready",
-          "issues":[
-             
-          ]
-       },
-       {
-          "title":"in progress",
-          "issues":[
-             
-          ]
-       },
-       {
-          "title":"finished",
-          "issues":[
-             
-          ]
-       }
-    ]
- }` */
+
  let stringToParse
  if (window.localStorage.getItem('todos')){ 
     stringToParse = window.localStorage.getItem('todos')
@@ -85,8 +44,8 @@ export default function App() {
 const [state,dispatch] = useReducer(reducer, JSON.parse(stringToParse)) 
    
   useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(state))
-  })
+    localStorage.setItem('todos', JSON.stringify(state))    
+  },[state])
  
   return (
   <Context.Provider value={{dispatch}}>

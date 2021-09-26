@@ -4,7 +4,7 @@ import './InputField.css'
 
 export default function InputField(){
 const {dispatch} = useContext(Context)
-const [state,setState] = useState(false)
+const [status,setState] = useState(false)
 const [name,setName] = useState('')
 const [text,setText] = useState('')
 const [warning,setWarning] = useState('')
@@ -12,7 +12,7 @@ const [warning,setWarning] = useState('')
     return (
         <React.Fragment>
          <button className="button add-button" onClick={()=>{setState(true); setWarning('')}}>Add Task</button>
-        {state && ( 
+        {status && ( 
          <div className='modal'>
            <div className='modal-body'>
              <div className="task-header addtask-header">Add Task<i className="fas fa-times-circle close-tab" title="click to close" onClick={()=>setState(false)}></i></div>
@@ -25,9 +25,9 @@ const [warning,setWarning] = useState('')
                      type: 'add',
                      payload: {'target':'backlog','name':`${name}`, 'description':`${text}`}
                     });
-                     setState( !state )
-                     //setName('');
-                     //setText('')
+                     setState( !status )
+                     setName('');
+                     setText('')
                     }else { setWarning('Please enter non-empty data into the fields')}
                 } 
                 }>
