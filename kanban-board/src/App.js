@@ -48,7 +48,7 @@ const [state,dispatch] = useReducer(reducer, JSON.parse(stringToParse))
  },[state])
  
   return (
-  <Context.Provider value={{dispatch}}>
+  <Context.Provider value={{dispatch,state}}>
    <Navbar />
     <div className="App">      
       {state.map(item => <TaskList key={item.title} name={item.title} data={item.issues} />)}

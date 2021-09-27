@@ -4,17 +4,15 @@ import './DropDown.css'
 
 
 export default function DropDown(params) {
-    
-const {dispatch} = useContext(Context)
+const {dispatch,state} = useContext(Context)
 const [opened,setOpened] = useState(false)
 const [selected,setSelected] = useState ('')
 let source
 let countLength = 0
 let arrays = []
 
-
-if (window.localStorage.getItem('todos')){
-     arrays=JSON.parse(window.localStorage.getItem('todos'));
+if (state){
+     arrays=state;
 
 if (arrays.length) {
 switch (params.data){
