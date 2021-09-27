@@ -41,7 +41,7 @@ countLength = arrays.length
       {!opened ? <button className="button add-button" onClick={()=>setOpened(true)} disabled={countLength>0 ? false : true} >Add Task</button> : 
       <><select defaultValue='' className="selectbox" onChange={(event) => setSelected(event.target.value)}>
          <option value=''/>    
-      { arrays.map(issue => <option value={issue.id} key={issue.id.toString()} >{issue.id} - {issue.name}</option> )}
+      { arrays.map(issue => <option value={issue.id} key={issue.id.toString()} >{issue.name}</option> )}
       </select>
       <button className="button addtask" onClick={()=>{ 
           if (selected!==''){

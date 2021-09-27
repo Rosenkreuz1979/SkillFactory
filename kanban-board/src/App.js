@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import TaskList from './components/TaskList'
 import { Context } from './context'
 import reducer from './reducer'
+import { BrowserRouter as Router, Switch, Route, useParams, Link } from "react-router-dom";
 
 
 export default function App() {
@@ -43,6 +44,32 @@ export default function App() {
 
 const [state,dispatch] = useReducer(reducer, JSON.parse(stringToParse)) 
 
+function RenderTask() {
+   let { stack, render } = useParams()   
+   let result
+   state.map(todo => {               
+      if (todo.title === stack) {
+         console.log(`entered ${stack}`);
+          return result=todo.issues.filter(issue => issue.id===parseInt(render,10))[0]              
+      }  
+      return false    
+   })
+   console.log(result)
+   let d = new Date(result.id);
+   let timeStamp = d.getDate() + '/' + (d.getMonth()) + '/' + d.getFullYear() + " " + d.getHours() + ':' + d.getMinutes();
+
+   return (
+   <div className="route-container">
+      <div className="task-header">{result.name}<Link to="/"><i className="fas fa-times-circle close-tab inverse" title="click to close" ></i></Link></div>
+      <div className="placeholder">Section:</div>
+      <div className={`data ${stack}`}>{stack}</div>
+      <div className="placeholder">Date Created:</div>
+      <div className="data">{timeStamp}</div>
+      <div className="placeholder">Description:</div>
+      <div className="data">{result.description}</div>
+   </div>);
+ }
+
  useEffect(() => {    
    localStorage.setItem('todos', JSON.stringify(state))    
  },[state])
@@ -50,9 +77,18 @@ const [state,dispatch] = useReducer(reducer, JSON.parse(stringToParse))
   return (
   <Context.Provider value={{dispatch,state}}>
    <Navbar />
-    <div className="App">      
-      {state.map(item => <TaskList key={item.title} name={item.title} data={item.issues} />)}
-    </div>
+   <Router>
+     <Switch>
+        <Route path="/:stack/:render">
+           <RenderTask/>
+        </Route>
+        <Route path="/">
+         <div className="App">
+           {state.map(item => <TaskList key={item.title} name={item.title} data={item.issues} />)}
+         </div>
+         </Route>
+     </Switch>
+    </Router>
     <Footer data={state}/>
   </Context.Provider>
   );
