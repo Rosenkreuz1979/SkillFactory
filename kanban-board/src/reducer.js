@@ -19,17 +19,14 @@ export default function reducer(state,action){
             result = state.map(todo => {               
                 if (todo.title === action.payload.source) {
                     todoItem = todo.issues.filter(issue => issue.id===parseInt(action.payload.id,10))
-                    todo.issues = todo.issues.filter(issue => issue.id!==parseInt(action.payload.id,10))
-                 
+                    todo.issues = todo.issues.filter(issue => issue.id!==parseInt(action.payload.id,10))                 
                 }
-                return todo
-            })
-            result = result.map(todo => {
-                if (todo.title === action.payload.target) {
+                if (todo.title === action.payload.target && todoItem[0]) {
                     todo.issues.push(todoItem[0])
                 }
+
                 return todo
-            })
+            })            
             return result
 
         case 'remove':
