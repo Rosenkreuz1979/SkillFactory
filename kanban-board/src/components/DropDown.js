@@ -43,7 +43,7 @@ countLength = arrays.length
          <option value=''/>    
       { arrays.map(issue => <option value={issue.id} key={issue.id.toString()} >{issue.name}</option> )}
       </select>
-      <button className="button addtask" onClick={()=>{ 
+      <button className={`button addtask ${selected!=='' ? 'add-active' : ''}`} disabled={selected!=='' ? false : true} onClick={()=>{ 
           if (selected!==''){
           dispatch({
                      type: 'move',

@@ -38,7 +38,7 @@ export default function reducer(state,action){
           })
   
            return result
-        
+
         default:
            return state
     }
