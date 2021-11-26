@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Rosenkreuz1979/SkillFactory/issues"
   },
-  "homepage": "https://github.com/Rosenkreuz1979/SkillFactory#readme"
+  "homepage": "https://github.com/Rosenkreuz1979/SkillFactory#readme",
+  "dependencies": {
+    "create-react-app": "^1.2.1"
+  }
 }
